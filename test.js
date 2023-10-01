@@ -1,21 +1,21 @@
-let button, greeting, text;
+let greeting;
 
 function setup() {
   // create canvas
   createCanvas(710, 400);
 
-  button = createButton('Generate 生成文本');
-  button.position(20, 65);
-  button.mousePressed(greet);
-
-  greeting = createElement('h2', 'Pink Noise Generator 粉红色噪音诗歌生成器');
+  greeting = createElement('h1', 'Pink Noise Generator 粉红色噪音诗歌生成器');
   greeting.position(20, 5);
 
   textAlign(CENTER);
   textSize(50);
+
+  // Call the greet function every 1 second
+  setInterval(greet, 1000);
 }
 
 function greet() {
+  background(255); // Clear the canvas
 
   for (let i = 0; i < 200; i++) {
     push();
@@ -25,10 +25,4 @@ function greet() {
     text('Pink Noise', 0, 0);
     pop();
   }
-  
-  let s = 'The quick brown fox jumped over the lazy dog.';
-  textSize(18);
-  fill(50);
-  text(s,250,150,300,300);
-
 }
